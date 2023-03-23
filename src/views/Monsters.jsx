@@ -9,8 +9,6 @@ function Monsters() {
     navigate(`/monster/${id}`)
   }
 
-  const { idSelected } = useParams()
-
   return (
     <div>
       <h1>React Router II</h1>
