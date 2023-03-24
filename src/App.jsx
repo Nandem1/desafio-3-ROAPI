@@ -1,15 +1,27 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavbarMain from './assets/components/NavbarMain';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import MyContext from './MyContext';
 import Monsters from './views/Monsters';
 import Home from './views/Home';
+import MonsterSelected from './views/MonsterSelected';
 
 function App() {
   const [roData, setRoData] = useState([])
-  const globalContext = { roData }
+  const [monsterSelected, setMonsterSelected] = useState("")
+  const globalContext = { roData, monsterSelected, setMonsterSelected }
+
+  const getData = async () => {
+    const req = await fetch("https://ragnarokapi.bravan.cloudns.cl/monsters/?page=1&limit=50")
+    const res = await req.json()
+    setRoData(res)
+  }
+
+  useEffect(() => {
+    getData()
+  },[])
 
   return (
     <div className="App">
@@ -19,6 +31,7 @@ function App() {
           <Routes>
             <Route path='/home' element={<Home />} />
             <Route path='/monsters' element={<Monsters />} />
+            <Route path='/monsters/:monsterSelected' element={ monsterSelected !== "" ? <MonsterSelected /> : <Navigate to='/monsters'/>}/>
           </Routes>
         </BrowserRouter>
       </MyContext.Provider>

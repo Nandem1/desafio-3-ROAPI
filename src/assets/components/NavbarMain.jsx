@@ -1,8 +1,10 @@
-import React from 'react'
+import { React, useContext } from 'react'
 import { NavLink } from 'react-router-dom';
+import MyContext from '../../MyContext';
 
 function NavbarMain() {
     const setActiveClass = ({ isActive }) => (isActive ? "active" : "inactive")
+    const { setMonsterSelected } = useContext(MyContext)
 
     return (
         <div className='bg-dark text-white p-5 d-flex justify-content-around align-items-center flex-wrap'>
