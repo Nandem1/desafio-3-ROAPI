@@ -4,7 +4,7 @@ import { Container, Row, Col, Image } from 'react-bootstrap'
 function Home() {
   return (
     <div>
-      <Container>
+      <Container className='mb-5'>
         <Row lg={2} md={2} xs={1} sm={1}>
           <Col className='mt-5'>
             <div className='d-flex justify-content-center align-items-center'>

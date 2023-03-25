@@ -22,9 +22,24 @@
   height: 360px;
 }
 
+.img-monster {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+
+.form-search {
+  width: 50%;
+  margin: auto;
+}
+
 @media (max-width: 750px) {
   .video-home {
     width: calc(650px / 1.85);
     height: calc(366px / 1.85);
+  }
+
+  .form-search {
+    width: 95%;
   }
 }

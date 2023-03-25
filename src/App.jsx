@@ -14,7 +14,7 @@ function App() {
   const globalContext = { roData, monsterSelected, setMonsterSelected }
 
   const getData = async () => {
-    const req = await fetch("https://ragnarokapi.bravan.cloudns.cl/monsters/?page=1&limit=50")
+    const req = await fetch("https://ragnarokapi.bravan.cloudns.cl/monsters/?page=1&limit=500")
     const res = await req.json()
     setRoData(res)
   }

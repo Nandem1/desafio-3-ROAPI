@@ -16,16 +16,27 @@ function Monsters() {
     setMonsterSelected(event.target.value.toLowerCase())
   }
 
+  function orderPlease(a, b) {
+    if (a.name.en < b.name.en) {
+      return -1;
+    } else if (a.name.en > b.name.en) {
+      return 1;
+    } else {
+      return 0;
+    }
+  }
+
+
   return (
     <div>
-      <h1>Search Monster</h1>
-      <Form>
+      <h1 className='text-center mt-3'>Search Monster</h1>
+      <Form className='form-search'>
         <fieldset>
           <Form.Group className="mb-3">
             <Form.Label htmlFor="Select">Monsters</Form.Label>
             <Form.Select id="Select" onChange={handleChange}>
               <option disabled={true}>Monsters List</option>
-              {roData.map((item) => {
+              {roData.sort(orderPlease).map((item) => {
                 return <option key={item.id} value={item.name.en}>{item.name.en}</option>
               })}
             </Form.Select>
