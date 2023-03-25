@@ -13,7 +13,7 @@ function NavbarMain() {
             </div>
             <div className='d-flex fs-5'>
                 <div className='mx-1'>
-                    <NavLink className={setActiveClass} to="/home">Home</NavLink>
+                    <NavLink className={setActiveClass} to="/desafio-3-ROAPI">Home</NavLink>
                 </div>
                 <div className='mx-1'>
                     <NavLink className={setActiveClass} to="/monsters">Monsters</NavLink>

@@ -29,7 +29,7 @@ function App() {
         <BrowserRouter>
           <NavbarMain />
           <Routes>
-            <Route path='/home' element={<Home />} />
+            <Route path='/desafio-3-ROAPI' element={<Home />} />
             <Route path='/monsters' element={<Monsters />} />
             <Route path='/monsters/:monsterSelected' element={ monsterSelected !== "" ? <MonsterSelected /> : <Navigate to='/monsters'/>}/>
           </Routes>
